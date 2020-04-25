@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1">
+					<div class="table100-firstcol">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Employees</th>
+								</tr>
+							</thead>
+							<tbody>
+
+                {% for employee in employees %}
+								<tr class="row100 body">
+                  <td class="cell100 column1">{{ employee.name }}</td>
+								</tr>
+                {% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="wrap-table100-nextcols js-pscroll">
+						<div class="table100-nextcols">
+							<table>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 column2">Department</th>
+                    <th class="cell100 column3">Position</th>
+										<th class="cell100 column4">Started Of Work</th>
+										<th class="cell100 column5">Left Work</th>
+										<th class="cell100 column6">Date Of Birth</th>
+                    <th class="cell100 column7">Phone Number</th>
+                    <th class="cell100 column8">Email</th>
+										<th class="cell100 column9">GitHub</th>
+									</tr>
+								</thead>
+								<tbody>
+
+                  {% for employee in employees %}
+									<tr class="row100 body">
+                    <td class="cell100 column2">{{ employee.department }}</td>
+                    <td class="cell100 column3">{{ employee.position }}</td>
+                    <td class="cell100 column4">{{ employee.started_work }}</td>
+                    <td class="cell100 column5">{{ employee.left_work }}</td>
+                    <td class="cell100 column6">{{ employee.date_of_birth }}</td>
+                    <td class="cell100 column7">{{ employee.phone_number }}</td>
+                    <td class="cell100 column8">{{ employee.email }}</td>
+										<td class="cell100 column9"><a href="{{ employee.github_link }}">GitHub</a></td>
+                  </tr>
+                  {% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <p>Delete?</p>
+  <button type="submit" name="button" class=" btn btn-danger">Yes</button>
+  <a class="btn btn-primary" href="{% url 'list_employees' %}">No</a>
+</form>
+{% endblock content %}
