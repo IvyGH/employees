@@ -7,5 +7,5 @@ from .models import Employee
 class EmployeeModelAdmin(admin.ModelAdmin):
     """ Employee model admin """
     list_display = ('name', 'department', 'position',
-                    'started_work', 'date_of_birth',
-                    'email', 'github_link')
+                    'started_work', 'date_of_birth', 'email',
+                    'github_link')

@@ -25,7 +25,10 @@ class EmployeeCreateView(CreateView):
 
 class EmployeeUpdateView(UpdateView):
     """ Employee update view """
-    pass
+    form_class = EmployeeModelForm
+    model = Employee
+    template_name = 'list/employees_update.html'
+    success_url = '/'
 
 
 class EmployeeDeleteView(DeleteView):
