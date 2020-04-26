@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<div class="limiter">
+<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100 ver1">
@@ -32,11 +32,10 @@
 										<th class="cell100 column2">Department</th>
                     <th class="cell100 column3">Position</th>
 										<th class="cell100 column4">Started Of Work</th>
-										<th class="cell100 column5">Left Work</th>
-										<th class="cell100 column6">Date Of Birth</th>
-                    <th class="cell100 column7">Phone Number</th>
-                    <th class="cell100 column8">Email</th>
-										<th class="cell100 column9">GitHub</th>
+										<th class="cell100 column5">Date Of Birth</th>
+                    <th class="cell100 column6">Email</th>
+										<th class="cell100 column7">GitHub</th>
+										<th class="cell100 column8">Delete</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -46,20 +45,19 @@
                     <td class="cell100 column2">{{ employee.department }}</td>
                     <td class="cell100 column3">{{ employee.position }}</td>
                     <td class="cell100 column4">{{ employee.started_work }}</td>
-                    <td class="cell100 column5">{{ employee.left_work }}</td>
-                    <td class="cell100 column6">{{ employee.date_of_birth }}</td>
-                    <td class="cell100 column7">{{ employee.phone_number }}</td>
-                    <td class="cell100 column8">{{ employee.email }}</td>
-										<td class="cell100 column9"><a href="{{ employee.github_link }}">GitHub</a></td>
+                    <td class="cell100 column5">{{ employee.date_of_birth }}</td>
+                    <td class="cell100 column6">{{ employee.email }}</td>
+										<td class="cell100 column7"><a href="{{ employee.github_link }}">GitHub</a></td>
+										<td class="cell100 column8"><a href="{% url 'delete_employee' pk=employee.id %}" class="btn btn-light">Delete</a></td>
                   </tr>
                   {% endfor %}
-
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
+			<a href="{% url 'add_employee' %}" class="btn btn-info">Add Employee</a>
 		</div>
 	</div>
 {% endblock content %}

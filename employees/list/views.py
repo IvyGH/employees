@@ -20,6 +20,7 @@ class EmployeeCreateView(CreateView):
     form_class = EmployeeModelForm
     model = Employee
     template_name = 'list/employees_add.html'
+    success_url = '/'
 
 
 class EmployeeUpdateView(UpdateView):
